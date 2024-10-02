@@ -11,8 +11,8 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="flex flex-col items-center">
-      <div className="font-bold py-20">Welcome!</div>
       <div className="flex flex-col gap-4">
+        <div className="font-bold py-8 pt-20">Liam Powers Portfolio</div>
         {links.map((link) => (
           <Link
             key={link.name}

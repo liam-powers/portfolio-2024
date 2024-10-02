@@ -73,9 +73,11 @@ export function App() {
       </head>
       <body>
         <div className="min-h-screen flex flex-col">
-          <header className="p-4 flex justify-between items-center">
+          <header className="p-4 flex justify-between">
             <Nav />
-            <ThemeSwitch />
+            <div className="flex items-start">
+              <ThemeSwitch />
+            </div>
           </header>
           <main className="flex-grow">
             <Outlet />

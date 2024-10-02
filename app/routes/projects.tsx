@@ -1,15 +1,39 @@
-import HomeArrow from "../components/HomeArrow";
-
 export default function Projects() {
+  const hyperlinkStyles =
+    "text-[#007EBB] underline transform transition-transform hover:scale-110 w-12";
+
   return (
     <div>
-      <HomeArrow />
       <div className="flex flex-col items-center px-[8%] lg:px-[15%]">
         <div className="font-bold text-lg">Projects</div>
         <div className="flex flex-col gap-8">
           {projects.map((project) => (
             <div key={project.title}>
-              <div className="font-bold pb-4">{project.title}</div>
+              <div className="font-bold pb-4">
+                {project.title}
+                &nbsp;|&nbsp;
+                <span>
+                  <a
+                    href={project.code}
+                    className={hyperlinkStyles}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Code
+                  </a>
+                </span>
+                &nbsp;|&nbsp;
+                <span>
+                  <a
+                    href={project.link}
+                    className={hyperlinkStyles}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Site
+                  </a>
+                </span>
+              </div>
               <div className="font-poppins">
                 <div>{project.blurb}</div>
                 <ul className="pl-6">
@@ -36,7 +60,8 @@ const projects = [
       "Provides filters to query listings from Firebase and renders them with Next.js and React",
       "Learned web scraping, TypeScript, Firebase, and better understanding of React",
     ],
-    code: "",
+    code: "https://gist.github.com/liam-powers/013fb675fa823d98b470bffc975b664a",
+    link: "https://bass-harbor-liam-powers-projects.vercel.app",
   },
   {
     title: "PastePouch",
@@ -47,5 +72,7 @@ const projects = [
       "Svelte front end connects to PostgreSQL hosted on CloudSQL for database functionality",
       "Features high-performance Rust CLI tool for developers to paste multiple files at once",
     ],
+    code: "https://gist.github.com/liam-powers/30e055d4f2f4b86331518900ea709118",
+    link: "https://vercel.com/liam-powers-projects/paste-pouch-front-end",
   },
 ];

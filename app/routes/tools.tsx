@@ -1,9 +1,6 @@
-import HomeArrow from "../components/HomeArrow";
-
 export default function Projects() {
   return (
     <div>
-      <HomeArrow />
       <div className="flex flex-col items-center px-[8%] lg:px-[15%]">
         <div className="font-bold text-lg pb-8">Tools</div>
         <div className="font-poppins">
@@ -49,7 +46,7 @@ const items = {
     { name: "Editor", attr: "Zed, VSCode for SSH" },
     { name: "CLI", attr: "starship.rs, zoxide" },
     { name: "Languages", attr: "Go, Python, TypeScript, SQL" },
-    { name: "Other", attr: "React, Postgres" },
+    { name: "Other", attr: "React, Postgres, Vite (a godsend)" },
   ],
   edc: [
     "Weightlifting straps + cuffs",

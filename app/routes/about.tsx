@@ -3,9 +3,9 @@ import headshot from "../images/headshot.jpeg";
 export default function About() {
   return (
     <div>
-      <div className="flex flex-col items-center px-[8%] lg:px-[15%] pb-4">
+      <div className="flex flex-col items-center px-[8%] lg:px-[15%] pb-16">
         <div className="flex flex-col md:flex-row gap-16">
-          <div className="flex flex-col gap-8 font-poppins order-2 md:order-1">
+          <div className="flex flex-col gap-6 font-poppins order-2 md:order-1">
             <div className="font-bold pb-4 text-center text-lg">About</div>
 
             <div>
@@ -15,15 +15,21 @@ export default function About() {
             </div>
 
             <div>
-              Some of my favorite courses have been: Operating Systems Data
-              Structures and Algorithms Distributed Systems Machine Learning
-              Game Design and Development Python for Data Science
+              Some of my favorite courses have been:
+              <ul className="pl-6">
+                <li>• Operating Systems</li>
+                <li>• Data Structures and Algorithms</li>
+                <li>• Distributed Systems</li>
+                <li>• Machine Learning</li>
+                <li>• Game Design and Development</li>
+                <li>• Python for Data Science</li>
+              </ul>
             </div>
 
             <div>
               This fall I’m excited to be taking Scalable Software Architectures
-              alongside Human Computer Interaction next quarter as a supplement
-              to my endeavors as a full stack developer.
+              alongside Human Computer Interaction as a supplement to my
+              endeavors as a developer.
             </div>
 
             <div>

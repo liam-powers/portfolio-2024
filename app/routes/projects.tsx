@@ -73,6 +73,6 @@ const projects = [
       "Features high-performance Rust CLI tool for developers to paste multiple files at once",
     ],
     code: "https://gist.github.com/liam-powers/30e055d4f2f4b86331518900ea709118",
-    link: "https://vercel.com/liam-powers-projects/paste-pouch-front-end",
+    link: "https://paste-pouch-front-end.vercel.app/",
   },
 ];

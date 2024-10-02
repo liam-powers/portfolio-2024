@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Theme, useTheme } from "remix-themes";
 import linkedin from "../images/linkedin.svg";
 import githubBlack from "../images/github-black.svg";
@@ -8,16 +9,24 @@ import { useLocation } from "react-router-dom";
 
 export default function Nav() {
   const location = useLocation();
-
   const [theme] = useTheme();
+  const [githubIcon, setGithubIcon] = useState(githubWhite);
 
   const links = [
     { src: linkedin, href: "https://www.linkedin.com/in/liampowers-/" },
     {
-      src: theme === Theme.DARK ? githubWhite : githubBlack,
+      src: githubIcon,
       href: "https://github.com/liam-powers",
     },
   ];
+
+  useEffect(() => {
+    if (theme === Theme.DARK) {
+      setGithubIcon(githubWhite);
+    } else {
+      setGithubIcon(githubBlack);
+    }
+  }, [theme]);
 
   const hoverStyles = "transform transition-transform hover:scale-110 w-12";
 

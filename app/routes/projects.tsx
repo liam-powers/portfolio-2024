@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <div>
       <div className="flex flex-col items-center px-[8%] lg:px-[15%]">
-        <div className="font-bold text-lg">Projects</div>
+        <div className="font-bold text-lg pb-4">Some Stuff I've Made</div>
         <div className="flex flex-col gap-8">
           {projects.map((project) => (
             <div key={project.title}>

@@ -8,13 +8,15 @@ export default function ThemeSwitch() {
     setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
   };
 
+  const iconStyles = "w-8 md:w-10 h-8 md:h-10";
+
   return (
     <div>
       <button onClick={toggleTheme}>
         {theme === Theme.DARK ? (
-          <FaRegMoon size="30px" />
+          <FaRegMoon className={iconStyles} />
         ) : (
-          <FaRegSun size="30px" />
+          <FaRegSun className={iconStyles} />
         )}
       </button>
     </div>

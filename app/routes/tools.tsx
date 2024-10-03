@@ -2,7 +2,7 @@ export default function Projects() {
   return (
     <div>
       <div className="flex flex-col items-center px-[8%] lg:px-[15%]">
-        <div className="font-bold text-lg pb-8">Tools</div>
+        <div className="font-bold text-lg pb-4">Things I like to use</div>
         <div className="font-poppins">
           <div>
             I like to put some thought into the stuff I use every day, so here’s

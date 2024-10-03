@@ -1,61 +1,38 @@
-import { useState, useEffect } from "react";
-import { Theme, useTheme } from "remix-themes";
-import linkedin from "../images/linkedin.svg";
-import githubBlack from "../images/github-black.svg";
-import githubWhite from "../images/github-white.svg";
-import arrowLeftBlack from "../images/arrow-left-black.svg";
-import arrowLeftWhite from "../images/arrow-left-white.svg";
-import { useLocation } from "react-router-dom";
+import { Link } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 
 export default function Nav() {
-  const location = useLocation();
-  const [theme] = useTheme();
-  const [githubIcon, setGithubIcon] = useState(githubWhite);
-
   const links = [
-    { src: linkedin, href: "https://www.linkedin.com/in/liampowers-/" },
     {
-      src: githubIcon,
-      href: "https://github.com/liam-powers",
+      to: "/",
+      name: "About",
+    },
+    {
+      to: "/projects",
+      name: "Projects",
+    },
+    {
+      to: "/tools",
+      name: "Tools",
     },
   ];
 
-  useEffect(() => {
-    if (theme === Theme.DARK) {
-      setGithubIcon(githubWhite);
-    } else {
-      setGithubIcon(githubBlack);
-    }
-  }, [theme]);
-
-  const hoverStyles = "transform transition-transform hover:scale-110 w-12";
-
-  const showArrowLeft = location.pathname !== "/";
+  const location = useLocation();
+  const offPageClass =
+    "text-xl hover:underline transform transition-transform hover:scale-110";
+  const onPageClass = offPageClass.concat(" font-bold");
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex gap-4">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={hoverStyles}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={link.src} alt="link" />
-          </a>
-        ))}
-      </div>
-
-      {showArrowLeft ? (
-        <a href="/" className={hoverStyles}>
-          <img
-            src={theme === Theme.DARK ? arrowLeftWhite : arrowLeftBlack}
-            alt="back"
-          />
-        </a>
-      ) : null}
+    <div className="flex gap-8">
+      {links.map((link) => (
+        <Link
+          key={link.name}
+          to={link.to}
+          className={link.to === location.pathname ? onPageClass : offPageClass}
+        >
+          {link.name}
+        </Link>
+      ))}
     </div>
   );
 }

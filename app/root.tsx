@@ -8,6 +8,7 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import Nav from "./components/Nav";
+import Socials from "./components/Socials";
 import ThemeSwitch from "./components/ThemeSwitch";
 import "./tailwind.css";
 import clsx from "clsx";
@@ -73,13 +74,12 @@ export function App() {
       </head>
       <body>
         <div className="min-h-screen flex flex-col">
-          <header className="p-4 flex justify-between">
+          <header className="p-4 flex justify-between items-center">
+            <Socials />
             <Nav />
-            <div className="flex items-start">
-              <ThemeSwitch />
-            </div>
+            <ThemeSwitch />
           </header>
-          <main className="flex-grow">
+          <main className="flex-grow pt-8">
             <Outlet />
           </main>
         </div>
